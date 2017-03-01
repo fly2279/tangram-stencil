@@ -1,0 +1,113 @@
+<!doctype html>
+<!--
+    Tangram: real-time WebGL rendering for OpenStreetMap
+
+    http://github.com/tangrams/tangram
+    http://mapzen.com
+-->
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Simple demo – Tangram</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+
+    <style>
+        body {
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+        }
+
+        #map {
+            /*height: 100%;
+            width: 100%;
+            position: absolute;*/
+            width: 634px;
+            height: 482px;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <!-- leaflet -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+    <!-- Main tangram library -->
+    <script src="https://mapzen.com/tangram/0.11/tangram.min.js"></script>
+
+    <!-- Hash -->
+    <script type="text/javascript" src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
+
+    <!-- Demo setup -->
+    <script>
+        var cities = new L.LayerGroup();
+
+        L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
+        L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
+        L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
+        L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
+
+
+        var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+        var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
+            streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr}),
+            aerial = new L.TileLayer('https://tiles{s}.groundpointnine.com/Z{z}/{y}/{x}.png', {errorTileUrl: 'https://tiles5.groundpointnine.com/blank.png', reuseTiles: true, minZoom: 12, maxZoom: 16, subdomains: [0,1,2,3]}),
+            stencil = new L.TileLayer('https://{s}.groundpointseven.com/osm_stencil/{z}/{x}/{y}.png',{reuseTiles: true, minZoom:8, maxZoom:18, subdomains: ['tiles0', 'tiles1', 'tiles2', 'tiles3'], attribution:'Map data © openstreetmap contributors'}),
+            tangram = Tangram.leafletLayer({
+                scene: 'cinnabar-style.yaml',
+                attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+            })
+            ;
+
+        var map = L.map('map', {
+            center: [40.5796, -99.2225],
+            zoom: 12,
+            zoomSnap: 0,
+            zoomDelta: .25,
+            layers: [aerial, tangram]
+        });
+
+        // Assuming your map instance is in a variable called map
+        var hash = new L.Hash(map);
+        
+        var baseLayers = {
+            "Grayscale": grayscale,
+            "Streets": streets,
+            "Aerial": aerial
+        };
+
+        var overlays = {
+            "Stencil": stencil,
+            "Cinnabar": tangram,
+            "Cities": cities
+        };
+
+        L.control.layers(baseLayers, overlays).addTo(map);
+
+
+        var corner1 = L.latLng(40.569, -99.2399),
+            corner2 = L.latLng(40.5902, -99.2051),
+            bounds = L.latLngBounds(corner1, corner2);
+
+        // map.fitBounds([
+        //     [40.569, -99.2399],
+        //     [40.5902, -99.2051]
+        // ], {maxZoom:16});
+
+        map.on('zoomend', function(ev) {
+            //console.log(map.getZoom());
+        });
+
+    </script>
+
+  </body>
+</html>
