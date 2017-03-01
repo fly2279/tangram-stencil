@@ -91,6 +91,17 @@ global:
         }
     ux_language_text_source_road_ref_and_name: |
         function() {
+            //var name = global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
+            if( feature.ref && feature.name && feature.name.length > 0 ) { 
+                return feature.ref + " " + name; 
+            } 
+            if( feature.name && feature.name.length > 0 ) { 
+                return name; 
+            } else { 
+                return feature.ref; 
+            }
+
+
             // if a ux_langauge has been defined use that, else if there is feature name in the fallback_ux_language then use that, else use the feature's default name in the local language
             return (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
 
@@ -105,6 +116,16 @@ global:
         }
     ux_language_text_source_road_ref_and_name_short: |
         function() {
+            //var name = global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
+            if( feature.ref && feature.name && feature.name.length > 0 ) { 
+                return feature.ref + " " + name; 
+            } 
+            if( feature.name && feature.name.length > 0 ) { 
+                return name; 
+            } else { 
+                return feature.ref; 
+            }
+            
             // if a ux_langauge has been defined use that, else if there is feature name in the fallback_ux_language then use that, else use the feature's default name in the local language
             return (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
 
@@ -256,7 +277,7 @@ global:
     text_visible_steps:             true
     text_visible_aerialway:         true
     text_visible_airport_gate:      true
-    sdk_road_shields:               true
+    sdk_road_shields:               false
     text_visible_exits:             true
     text_visible_exits_e:           false     # false for default, false for more
     #
