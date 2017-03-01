@@ -356,49 +356,49 @@ global:
     water2_o:           false               # water stroke 2
     earth1:             false               # land color
     earth1_r:           '#666'              # land color road
-    earth2:             '#d8d3ca'           # urban
+    earth2:             false.              # urban
     earth2_v:           false               # urban visibility
-    earth2_e:           '#d8d3ca'           # urban early
-    earth2_e2:          '#d4cfc6'           # urban early fade in
-    earth2_e3:          '#dbd8d3'           # urban early fade in 3
+    earth2_e:           false               # urban early
+    earth2_e2:          false               # urban early fade in
+    earth2_e3:          false               # urban early fade in 3
     earth2_ev:          true                # urban early visibility
-    green1:             '#aed0b6'           # park (national park, local parks)
+    green1:             false               # park (national park, local parks)
     green1_r:           '#bddec5'           # park roads
     green1_b:           '#9caca0'           # park buildings
     green1_bo:          [.20, .20, .20]     # park building outlines
-    green1_w:           '#b7d7bf'           # wilderness area
-    green1_ws:          '#aed0b6'           # wilderness area stroke
+    green1_w:           false               # wilderness area
+    green1_ws:          false               # wilderness area stroke
     green1b:            [0.80,0.80,0.80]    # park
-    green2:             '#b8d2bf'           # cemetery
+    green2:             false               # cemetery
     green2_r:           [0.7,0.7,0.7]       # cemetery road
-    green2_b:           '#9caca0'           # cemetery, zoo buildings
+    green2_b:           false               # cemetery, zoo buildings
     green2_bo:          [.20, .20, .20]     # cemetery, zoo building outline
-    green3:             '#b8d2bf'           # golf course
-    green4:             '#e3e2e0'           # farm faint
+    green3:             false               # golf course
+    green4:             false               # farm faint
     green4_v:           false               # farm faint
-    green5:             '#e3e2e0'           # farm
-    green6:             '#94d59f'           # nature reserve
-    green7:             '#bddec5'           # forest
-    green8:             '#B4D8BD'           # conservation
-    green9:             '#cfe3d4'           # forest (landcover)
-    green9_e:           '#cfe3d4'           # forest (landcover) early
+    green5:             false               # farm
+    green6:             false               # nature reserve
+    green7:             false               # forest
+    green8:             false               # conservation
+    green9:             false               # forest (landcover)
+    green9_e:           false               # forest (landcover) early
     green9_v:           true                # forest (landcover) visibility
-    green10:            '#c7d4c0'           # sports_centre
-    green11:            '#d8ddd0'           # minor zoo related AOIs
-    green11_o:          '#aec7b5'           # minor zoo related AOIs outline
+    green10:            false               # sports_centre
+    green11:            false               # minor zoo related AOIs
+    green11_o:          false               # minor zoo related AOIs outline
     green12:            [0.584,0.843,0.792] # grass (common areas)
-    orange1:            '#bfb08e'           # stadium
-    orange2:            '#d8ccb0'           # pitch (play field)
-    orange3:            '#b9a597'           # racetrack (play field)
-    brown1:             '#D9CFC3'           # university
-    brown1_r:           '#cec1b2'           # university roads
-    brown1_b:           '#b1aca4'           # university buildings
+    orange1:            false               # stadium
+    orange2:            false               # pitch (play field)
+    orange3:            false               # racetrack (play field)
+    brown1:             false               # university
+    brown1_r:           false               # university roads
+    brown1_b:           false               # university buildings
     brown1_bo:          [.30, .30, .30]     # university building outlines
-    brown2:             '#D9CFC3'           # school
-    brown3:             '#c7b7a2'           # playground
-    red1:               '#d9c3c3'           # hospital
-    red1_r:             '#d9c3c3'           # hospital roads
-    red1_b:             '#b5a7a7'           # hospital buildings
+    brown2:             false               # school
+    brown3:             false               # playground
+    red1:               false               # hospital
+    red1_r:             false               # hospital roads
+    red1_b:             false               # hospital buildings
     red1_bo:            [.30, .30, .30]     # hospital building outlines
     grey1:              '#d7d7d7'           # retail, airport apron, parking, church
     grey1_e:            '#cacaca'           # retail, airport apron, parking, church early zoom 14
@@ -417,18 +417,18 @@ global:
     grey9:              [.569,.69,.722,.5]  #[.7, .7, .7]        # transit platform
     grey9_o:            [.5, .5, .5]        # transit platform outline
     grey9_v:            true                # transit platform visibility
-    grey10:             '#d4cce6'           # generic major landuse (theme park, resort, aquarium, winery)
-    grey10_o:           '#bcb9c5'           # generic major landuse outline
-    grey11:             '#d7d7d7'           # generic minor landuse (attraction, artwork)
-    grey11_o:           '#cccccc'           # generic minor landuse outline
-    grey12:             '#cfcfcf'           # generic minor amusements (roller coasters, rides, slide, carousel)
-    grey12_o:           '#c5c5c5'           # generic minor amusements
+    grey10:             false               # generic major landuse (theme park, resort, aquarium, winery)
+    grey10_o:           false               # generic major landuse outline
+    grey11:             false               # generic minor landuse (attraction, artwork)
+    grey11_o:           false               # generic minor landuse outline
+    grey12:             false               # generic minor amusements (roller coasters, rides, slide, carousel)
+    grey12_o:           false               # generic minor amusements
     purple:             '#d2d1cd'           # airport
     purple_v:           true                # airport visibility
     purple_b:           '#c2c3c4'           # airport buildings
     purple_bo:          '#969798'           # airport buildings outline
     mystry1:            '#d9d7c3'           # recreation ground
-    yellow1:            '#e7eda8'           # beach
+    yellow1:            false               # beach
     building1:          [.8, .8, .8]        # building
     building2:          [.6, .6, .6]        # building stroke
     building_o:         5                   # building stroke order
