@@ -229,7 +229,7 @@ global:
     icon_size_green:                [[0, '0px']]      # 0px for no, default, more  [[13, 14px], [16, 18px], [18, 19px]]
     icon_size_green_l:              [[0, '0px']]      # 0px for no, default, more  [[14,24px],[16,32px]]
     label_visible_poi_landuse:      true
-    icon_visible_poi_landuse:       false     # false for default
+    icon_visible_poi_landuse:       true     # false for default
     text_visible_poi_landuse:       false     # false for default
     label_visible_poi_landuse_e:    true
     icon_visible_poi_landuse_e:     false     # false for default
@@ -315,7 +315,7 @@ global:
     major_route2:               '#e3989a'           # zoomed out
     minor_route:                '#d19596'           # same as major_route
     minor_road1:                white               # natural earth
-    minor_road2:                whtie               # natural earth, same as major_road2
+    minor_road2:                white               # natural earth, same as major_road2
     minor_road3:                white
     minor_road4:                white               # zoomed out
     minor_road5:                white               # zoomed out, again
@@ -349,12 +349,12 @@ global:
     fence:                      '#555555'
 
     #areas:
-    scene1:             white               # map background, water
-    water1:             '#9dc3de'           # water
+    scene1:             false               # map background, water
+    water1:             false               # water
     water2:             [.75,.75,.75]       # playa
-    water1_o:           '#9dc3de'           # water stroke
-    water2_o:           '#9dc3de'           # water stroke 2
-    earth1:             '#e3e2e0'           # land color
+    water1_o:           false.              # water stroke
+    water2_o:           false               # water stroke 2
+    earth1:             false               # land color
     earth1_r:           '#666'              # land color road
     earth2:             '#d8d3ca'           # urban
     earth2_v:           false               # urban visibility
