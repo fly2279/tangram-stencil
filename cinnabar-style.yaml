@@ -1779,7 +1779,7 @@ layers:
             #         text-blend-order:
             #             priority: 50
             #             visible: global.sdk_road_shields
-            #             text_source: ref
+            #             text_source: feature.ref
             #             font:
             #                 fill: global.text_fill_shield
             #                 size: 8px
@@ -1790,7 +1790,7 @@ layers:
             #     draw:
             #         text-blend-order:
             #             visible: global.sdk_road_shields
-            #             text_source: ref
+            #             text_source: feature.ref
             #             font:
             #                 fill: global.text_fill_shield
             #                 size: 10px
@@ -1801,7 +1801,7 @@ layers:
             #     draw:
             #         text-blend-order:
             #             visible: global.sdk_road_shields
-            #             text_source: ref
+            #             text_source: feature.ref
             #             font:
             #                 fill: global.text_fill_shield
             #                 size: 11px
@@ -1812,7 +1812,7 @@ layers:
             #     draw:
             #         text-blend-order:
             #             visible: global.sdk_road_shields
-            #             text_source: ref
+            #             text_source: feature.ref
             #             font:
             #                 fill: global.text_fill_shield
             #                 size: 11px
@@ -1824,8 +1824,8 @@ layers:
                     text-blend-order:
                         priority: 50
                         visible: global.text_visible_highway
-                        #text_source: ref
-                        #text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
+                        #text_source: feature.ref
+                        # text_source: function() { console.log(feature);if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } if( feature.name ) { return feature.name; } else { return feature.ref; } }
                         font:
                             fill: global.text_fill
                             size: 13px
@@ -1837,8 +1837,8 @@ layers:
                     text-blend-order:
                         priority: 50
                         visible: global.text_visible_highway
-                        #text_source: ref
-                        #text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
+                        #text_source: feature.ref
+                        # text_source: function() { console.log(feature);if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } if( feature.name ) { return feature.name; } else { return feature.ref; } }
                         font:
                             fill: global.text_fill
                             size: 11px
@@ -2448,14 +2448,14 @@ layers:
                         outline:
                             cap: butt
             labels-minor_road-default:
-                filter: { $zoom: 15 }
+                filter: { $zoom: 14 }
                 draw:
                     text-blend-order:
                         priority: 59
                         visible: global.text_visible_minor_road_e
                         text_source: global.ux_language_text_source
             labels-minor_road:
-                filter: { $zoom: [15,16,17] }
+                filter: { $zoom: [14,15,16,17] }
                 draw:
                     text-blend-order:
                         priority: 59
@@ -2463,21 +2463,28 @@ layers:
                         #text_source: name
                         font:
                             fill: global.text_fill_road_e
-                            size: 11px
+                            size: 9px
                             stroke: { color: global.text_stroke_road4, width: 2 }
+                labels-minor_road-z14:
+                    filter: { $zoom: [14] }
+                    draw:
+                        text-blend-order:
+                            font:
+                                size: 12px
+                                stroke: { color: global.text_stroke_road4, width: 2 }
                 labels-minor_road-z15:
                     filter: { $zoom: [15] }
                     draw:
                         text-blend-order:
                             font:
-                                size: 9px
+                                size: 14px
                                 stroke: { color: global.text_stroke_road4, width: 1 }
                 labels-minor_road-z16:
-                    filter: { $zoom: [15] }
+                    filter: { $zoom: [16] }
                     draw:
                         text-blend-order:
                             font:
-                                size: 10px
+                                size: 14px
                                 stroke: { color: global.text_stroke_road4, width: 1 }
             labels-minor_road2:
                 filter: { $zoom: { min: 18 } }
