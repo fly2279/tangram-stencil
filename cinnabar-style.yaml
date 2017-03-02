@@ -421,13 +421,13 @@ global:
     red1_r:             false               # hospital roads
     red1_b:             false               # hospital buildings
     red1_bo:            [.30, .30, .30]     # hospital building outlines
-    grey1:              '#d7d7d7'           # retail, airport apron, parking, church
+    grey1:              '#cacaca'           # retail, airport apron, parking, church
     grey1_e:            '#cacaca'           # retail, airport apron, parking, church early zoom 14
-    grey1_v:            true                # retail, airport apron, parking, church
-    grey2:              orange              # airport runway
+    grey1_v:            false               # retail, airport apron, parking, church
+    grey2:              '#d7d7d7'           # airport runway
     grey3:              '#d7d7d7'           # railway
-    grey4:              '#ffc52a'           # airport taxiway
-    grey5:              '#ffc52a'           # airport taxiway
+    grey4:              '#E5E5E5'           # airport taxiway
+    grey5:              '#E5E5E5'           # airport taxiway
     grey6:              '#d1d1d1'           # industrial
     grey6_b:            [.70, .70, .70]     # industrial buildings
     grey6_bo:           [.20, .20, .20]     # industrial building outlines
@@ -437,7 +437,7 @@ global:
     grey8_v:            true                # winter sports visibility
     grey9:              [.569,.69,.722,.5]  #[.7, .7, .7]        # transit platform
     grey9_o:            [.5, .5, .5]        # transit platform outline
-    grey9_v:            true                # transit platform visibility
+    grey9_v:            false                # transit platform visibility
     grey10:             false               # generic major landuse (theme park, resort, aquarium, winery)
     grey10_o:           false               # generic major landuse outline
     grey11:             false               # generic minor landuse (attraction, artwork)
@@ -445,7 +445,7 @@ global:
     grey12:             false               # generic minor amusements (roller coasters, rides, slide, carousel)
     grey12_o:           false               # generic minor amusements
     purple:             '#d2d1cd'           # airport
-    purple_v:           true                # airport visibility
+    purple_v:           false               # landuse airport visibility
     purple_b:           '#c2c3c4'           # airport buildings
     purple_bo:          '#969798'           # airport buildings outline
     mystry1:            '#d9d7c3'           # recreation ground
