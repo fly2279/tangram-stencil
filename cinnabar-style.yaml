@@ -373,11 +373,11 @@ global:
     scene1:             false               # map background, water
     water1:             false               # water
     water2:             [.75,.75,.75]       # playa
-    water1_o:           false.              # water stroke
+    water1_o:           false               # water stroke
     water2_o:           false               # water stroke 2
     earth1:             false               # land color
     earth1_r:           '#666'              # land color road
-    earth2:             false.              # urban
+    earth2:             false               # urban
     earth2_v:           false               # urban visibility
     earth2_e:           false               # urban early
     earth2_e2:          false               # urban early fade in
