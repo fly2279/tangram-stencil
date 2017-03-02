@@ -93,10 +93,10 @@ global:
         function() {
             //var name = global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
             if( feature.ref && feature.name && feature.name.length > 0 ) { 
-                return feature.ref + " " + name; 
+                return feature.ref + " " + feature.name; 
             } 
             if( feature.name && feature.name.length > 0 ) { 
-                return name; 
+                return feature.name; 
             } else { 
                 return feature.ref; 
             }
@@ -118,10 +118,10 @@ global:
         function() {
             //var name = global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature.name;
             if( feature.ref && feature.name && feature.name.length > 0 ) { 
-                return feature.ref + " " + name; 
+                return feature.ref + " " + feature.name; 
             } 
             if( feature.name && feature.name.length > 0 ) { 
-                return name; 
+                return feature.name; 
             } else { 
                 return feature.ref; 
             }
