@@ -2484,21 +2484,21 @@ layers:
                         #text_source: name
                         font:
                             fill: global.text_fill_road_e
-                            size: 9px
+                            size: 8px
                             stroke: { color: global.text_stroke_road4, width: 2 }
                 labels-minor_road-z14:
                     filter: { $zoom: [14] }
                     draw:
                         text-blend-order:
                             font:
-                                size: 12px
+                                size: 10px
                                 stroke: { color: global.text_stroke_road4, width: 2 }
                 labels-minor_road-z15:
                     filter: { $zoom: [15] }
                     draw:
                         text-blend-order:
                             font:
-                                size: 14px
+                                size: 12px
                                 stroke: { color: global.text_stroke_road4, width: 1 }
                 labels-minor_road-z16:
                     filter: { $zoom: [16] }
