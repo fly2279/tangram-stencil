@@ -428,7 +428,7 @@ global:
     grey3:              '#d7d7d7'           # railway
     grey4:              '#E5E5E5'           # airport taxiway
     grey5:              '#E5E5E5'           # airport taxiway
-    grey6:              '#d1d1d1'           # industrial
+    grey6:              false               # industrial
     grey6_b:            [.70, .70, .70]     # industrial buildings
     grey6_bo:           [.20, .20, .20]     # industrial building outlines
     grey7:              '#ecebe9'           # pedestrian, match minor road / path color
