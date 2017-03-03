@@ -424,10 +424,10 @@ global:
     grey1:              '#cacaca'           # retail, airport apron, parking, church
     grey1_e:            '#cacaca'           # retail, airport apron, parking, church early zoom 14
     grey1_v:            false               # retail, airport apron, parking, church
-    grey2:              '#d7d7d7'           # airport runway
+    grey2:              false               # airport runway
     grey3:              '#d7d7d7'           # railway
-    grey4:              '#E5E5E5'           # airport taxiway
-    grey5:              '#E5E5E5'           # airport taxiway
+    grey4:              false               # airport taxiway
+    grey5:              false               # airport taxiway
     grey6:              false               # industrial
     grey6_b:            [.70, .70, .70]     # industrial buildings
     grey6_bo:           [.20, .20, .20]     # industrial building outlines
