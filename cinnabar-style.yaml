@@ -268,7 +268,7 @@ global:
     text_visible_secondary:         true
     text_visible_secondary_e:       false     # false for default, false for more
     text_visible_tertiary:          true
-    text_visible_tertiary_e:        false     # false for default, false for more
+    text_visible_tertiary_e:        true     # false for default, false for more
     text_visible_minor_road:        true
     text_visible_minor_road_e:      true
     text_visible_service_road:      true
