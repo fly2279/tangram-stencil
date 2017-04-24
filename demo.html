@@ -38,21 +38,13 @@
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
     <!-- Main tangram library -->
-    <script src="https://mapzen.com/tangram/0.11/tangram.min.js"></script>
+    <script src="https://mapzen.com/tangram/tangram.min.js"></script>
 
     <!-- Hash -->
-    <script type="text/javascript" src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
+    <script type="text/javascript" src="lib/leaflet-hash.js"></script>
 
     <!-- Demo setup -->
     <script>
-        var cities = new L.LayerGroup();
-
-        L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
-        L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
-        L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
-        L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
-
-
         var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
                 '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
                 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -60,10 +52,12 @@
 
         var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
             streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr}),
-            aerial = new L.TileLayer('https://tiles{s}.groundpointnine.com/Z{z}/{y}/{x}.png', {errorTileUrl: 'https://tiles5.groundpointnine.com/blank.png', reuseTiles: true, minZoom: 12, maxZoom: 16, subdomains: [0,1,2,3]}),
+            aerial = new L.TileLayer('https://aerialtiles{s}.groundpointnine.com/{z}/{x}/{y}.png', {errorTileUrl: 'https://tiles5.groundpointnine.com/blank.png', reuseTiles: true, minZoom: 6, maxZoom: 17, subdomains: [0,1,2,3]}),
             stencil = new L.TileLayer('https://{s}.groundpointseven.com/osm_stencil/{z}/{x}/{y}.png',{reuseTiles: true, minZoom:8, maxZoom:18, subdomains: ['tiles0', 'tiles1', 'tiles2', 'tiles3'], attribution:'Map data © openstreetmap contributors'}),
             tangram = Tangram.leafletLayer({
+                debug: true,
                 scene: 'cinnabar-style.yaml',
+                //scene: 'cinnabar-style-more-labels.yaml',
                 attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
             })
             ;
@@ -71,8 +65,8 @@
         var map = L.map('map', {
             center: [40.5796, -99.2225],
             zoom: 12,
-            zoomSnap: 0,
-            zoomDelta: .25,
+            zoomSnap: 0.001,
+            zoomDelta: .2,
             layers: [aerial, tangram]
         });
 
@@ -88,7 +82,7 @@
         var overlays = {
             "Stencil": stencil,
             "Cinnabar": tangram,
-            "Cities": cities
+            "Cities": cities,
         };
 
         L.control.layers(baseLayers, overlays).addTo(map);
